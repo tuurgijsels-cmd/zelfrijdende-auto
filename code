@@ -1,0 +1,102 @@
+// Motor 1
+int ENA = 5;
+int IN1 = 8;
+int IN2 = 9;
+
+// Motor 2
+int ENB = 6;
+int IN3 = 10;
+int IN4 = 11;
+
+void setup() {
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+
+  pinMode(ENB, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+}
+
+void loop() {
+
+  // 2 seconden vooruit
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENA, 150);
+  analogWrite(ENB, 220);
+  delay(2000);
+
+  // 2 seconden naar links
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  delay(2000);
+
+  // 2 seconden naar rechts
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  delay(2000);
+
+  // 2 seconden achteruit
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  delay(2000);
+
+  // Beide motoren stoppen
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
+
+  delay(2000);
+}
+
+
+Op 2026-11-16 11:00:06 schreef Janyar Sido - P6BTW1a
+
+// Motor 1
+int ENA = 5;
+int IN1 = 8;
+int IN2 = 9;
+
+// Motor 2
+int ENB = 6;
+int IN3 = 10;
+int IN4 = 11;
+
+void setup() {
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+
+  pinMode(ENB, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+}
+
+void loop() {
+
+  // Motor 1 vooruit
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, 150);
+
+  // Motor 2 achteruit
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  analogWrite(ENB, 220);
+
+  delay(3000);
+
+  // Beide motoren stoppen
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
+
+  delay(2000);
+}
